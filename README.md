@@ -222,5 +222,11 @@ Comprobamos las redes de docker:
 
 - docker network ls
 
+<img width="731" height="154" alt="image" src="https://github.com/user-attachments/assets/82573009-f27d-45e5-b6ca-43a444ebc35d" />
+
+Revisamos el docker-compose para ver el tema de la configuración de red del proxy.
+Ejecutamos el siguiente comando para comprobar los logs del apartado del proxy y que nos saque las últimas 20 líneas:
+
+- docker compose logs proxy --tail 20
 Revisamos
 ## Qué faltó por completar
