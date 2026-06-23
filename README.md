@@ -63,7 +63,16 @@ Probamos a entrar con el usuario mediante:
 <img width="535" height="379" alt="image" src="https://github.com/user-attachments/assets/1a155f9a-e673-465e-92e1-a7e38038b4f0" />
 
 
-
+4. Crear estructura de carpetas de despliegue
+- sudo mkdir -p /opt/pumukit
+- sudo mkdir -p /opt/pumukit/data
+- sudo mkdir -p /opt/pumukit/backups
+Se utiliza /opt/pumukit como directorio principal siguiendo la práctica habitual de alojar aplicaciones de terceros bajo /opt.
+La estructura se diseñó para separar:
+- Configuración
+- Datos persistentes
+- Logs
+- Ficheros de despliegue
 
 
 ## Qué faltó por completar
