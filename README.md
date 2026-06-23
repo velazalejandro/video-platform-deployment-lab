@@ -43,6 +43,7 @@ Abrimos la consola de PowerShell como administrador y escribimos el siguiente co
 
 
 2. Actualización del sistema y paquetes:
+
 Para mantener el sistema bien actualizado y los paquetes, ejecutamos los siguientes comandos:
 - sudo apt update
 - sudo apt upgrade –y
@@ -51,6 +52,7 @@ Para mantener el sistema bien actualizado y los paquetes, ejecutamos los siguien
 
 
 3. Configuración de usuario y pruebas:
+
 Creamos un nuevo usuario mediante buenas prácticas para realizar pruebas mediante la siguiente orden: (para no utilizar siempre el administrador en todo).
 - sudo adduser alejandro
 
