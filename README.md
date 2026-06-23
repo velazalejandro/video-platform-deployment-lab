@@ -77,5 +77,17 @@ La estructura se diseñó para separar:
 - Logs
 - Ficheros de despliegue
 
+5. Instalar Docker
+Los elementos importantes que consta el proyecto de Pumukit son los archivos de Dockerfile y Docker Compose, ya que el proyecto está construido con Docker principalmente. La documentación y el repositorio de Pumukit contiene contenedores, así que instalamos Docker Engine y Docker Compose Plugin
+Añadimos la clave oficial de Docker:
+- sudo install -m 0755 -d /etc/apt/keyrings curl -fsSL https://download.docker.com/linux/ubuntu/gpg | \ sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg
+
+sudo chmod a+r /etc/apt/keyrings/docker.gpg
+Añadimos el repositorio oficial de Docker:
+Añadimos la clave GPG oficial y el repositorio de Docker a tus fuentes de apt.
+sudo mkdir -p /etc/apt/keyrings
+curl -fsSL https://download.docker.com/linux/debian/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg
+echo "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/debian $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+
 
 ## Qué faltó por completar
