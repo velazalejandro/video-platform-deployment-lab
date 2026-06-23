@@ -121,6 +121,50 @@ Repositorio oficial: Pumukit GitHub
 
 <img width="808" height="306" alt="image" src="https://github.com/user-attachments/assets/e3858bf9-2052-4ed9-be64-a7c6a638e3d1" />
 
+7. Desplegar dependencias
 
+Instalamos nginx para configurar el proxy:
+
+-sudo apt install -y nginx
+
+<img width="577" height="432" alt="image" src="https://github.com/user-attachments/assets/2d583104-f439-4456-b9b9-991aebbdf669" />
+
+Comprobamos que está activo:
+
+- systemctl status nginx
+
+<img width="640" height="257" alt="image" src="https://github.com/user-attachments/assets/64d55b56-7805-41e6-9fd6-a7ee9f49fab3" />
+
+Vemos dentro del directorio Pumukit todo el contenido del repositorio:
+
+- README.md
+- documentación de instalación
+- ficheros Docker/Compose
+
+<img width="525" height="502" alt="image" src="https://github.com/user-attachments/assets/71510a92-c91f-4fd4-a504-752db0101044" />
+
+Comprobamos las 100 primera líneas del README:
+
+-head -100 README.md
+
+<img width="801" height="328" alt="image" src="https://github.com/user-attachments/assets/7786d11d-3a84-4bb5-8e05-2ca8d412a33a" />
+
+Comprobamos qué servicios define Compose:
+
+- docker compose config --services
+
+<img width="809" height="100" alt="image" src="https://github.com/user-attachments/assets/06854146-a0ea-4dc3-ab41-f65f0a85c7e6" />
+
+El proyecto trae un Makefile que encapsula todos los comandos Docker necesarios.
+Comprobamos si existe:
+
+- cd /opt/Pumukit
+- ls -la Makefile
+
+<img width="653" height="47" alt="image" src="https://github.com/user-attachments/assets/dad188c8-f5c8-4d5b-9136-21592646b3ab" />
+
+Instalamos make
+
+<img width="533" height="295" alt="image" src="https://github.com/user-attachments/assets/14dcd774-0328-42e4-9a73-4c871c6ae819" />
 
 ## Qué faltó por completar
