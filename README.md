@@ -60,6 +60,7 @@ El nuevo usuario lo añadimos al grupo sudo:
 Probamos a entrar con el usuario mediante:
 - ssh alejandro@xx.xx.xxx.xxx + la contraseña a introducir
 
+<img width="535" height="379" alt="image" src="https://github.com/user-attachments/assets/1a155f9a-e673-465e-92e1-a7e38038b4f0" />
 
 
 
