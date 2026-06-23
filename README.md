@@ -167,4 +167,30 @@ Instalamos make
 
 <img width="533" height="295" alt="image" src="https://github.com/user-attachments/assets/14dcd774-0328-42e4-9a73-4c871c6ae819" />
 
+Si existe y tiene la tarea up ejecutamos lo siguiente:
+
+- sudo make up
+
+<img width="815" height="563" alt="image" src="https://github.com/user-attachments/assets/6b72395b-271d-4790-86a5-57e095abd68a" />
+
+Nos da un error en la ejecución.
+El despliegue falla durante la construcción debido a una incompatibilidad entre la versión actual de Composer y las dependencias declaradas por Pumukit.
+El problema está en la siguiente línea:
+
+- && composer update --prefer-dist --no-scripts --no-progress --classmap-authoritative --no-interaction
+
+El error indica que Composer está bloqueando api-platform/core por temas de seguridad.
+
+Comprobamos si estamos usando la rama principal (master) más reciente:
+
+<img width="673" height="68" alt="image" src="https://github.com/user-attachments/assets/22d72112-a210-49be-84cb-c3d1c57b2e2d" />
+
+Rama master correcta
+
+<img width="815" height="129" alt="image" src="https://github.com/user-attachments/assets/63657971-2752-45c6-8931-8efed0cbb949" />
+
+Vemos que existe el composer.lock
+Solución: sustituimos en el dockerfile el “composer update” por “composer install”. Y una vez realizado el cambio volvemos a ejecutar el comando make up para que despliegue todo y se reproduzca el entorno de nuevo.
+Editamos el Dockerfile mediante el editor de texto nano:
+
 ## Qué faltó por completar
