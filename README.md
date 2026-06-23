@@ -38,6 +38,7 @@ Mediante los datos técnicos que se piden, primeramente vamos a conectarnos a la
 Lo siguiente que realizaremos es conectarnos a la máquina mediante conexión SSH remota.
 Abrimos la consola de PowerShell como administrador y escribimos el siguiente comando:
 - ssh administrador@xx.xx.xxx.xxx y su contraseña. Nos deja acceder correctamente.
+  
 <img width="814" height="189" alt="image" src="https://github.com/user-attachments/assets/9027f327-1c96-4379-a401-23b440602e5a" />
 
 
