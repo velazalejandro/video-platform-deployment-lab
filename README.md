@@ -228,5 +228,14 @@ Revisamos el docker-compose para ver el tema de la configuración de red del pro
 Ejecutamos el siguiente comando para comprobar los logs del apartado del proxy y que nos saque las últimas 20 líneas:
 
 - docker compose logs proxy --tail 20
+
 Revisamos
+
+<img width="814" height="328" alt="image" src="https://github.com/user-attachments/assets/3c5f7a7c-eea4-49db-be1d-f6bb376e0129" />
+
+
+
+
+
+
 ## Qué faltó por completar
