@@ -293,6 +293,28 @@ Nos situamos dentro del contenedor PHP con docker exec -it pumukit-php-1 sh y ej
 - php-fpm -i | grep listen
 - grep listen /usr/local/etc/php-fpm.d/www.conf
 
+<img width="818" height="220" alt="image" src="https://github.com/user-attachments/assets/062e8683-7e44-4d6b-a15a-6768bffd851a" />
 
+PHP-FPM está arrancado
+
+PHP-FPM escucha en 0.0.0.0:9000
+
+Comprobamos la configuración de red de los contenedores PHP y proxy:
+
+<img width="681" height="523" alt="image" src="https://github.com/user-attachments/assets/8252f108-ac55-4456-a359-b8388dcc6d00" />
+
+Accedemos con el dominio vía web y aparece lo siguiente:
+
+<img width="678" height="316" alt="image" src="https://github.com/user-attachments/assets/d9d0c040-56b8-4a4d-9c85-d91937af7f77" />
+
+Error relacionado con Symfony.
+No tengo experiencia previa con Symfony. Conseguí desplegar la infraestructura Docker y hacer que la aplicación respondiera por web. El estado final obtenido fue un error HTTP 400 relacionado con Symfony.
+
+8. Configuración de almacenamiento
+Los vídeos son el elemento principal.
+Montamos directorios desde la ruta del directorio opt:
+- /opt/pumukit/data/media
+- /opt/pumukit/data/db
+- /opt/pumukit/data/search
 
 ## Qué faltó por completar
