@@ -29,7 +29,7 @@ Proyecto de laboratorio personal basado en una prueba técnica de administració
 - Diagnóstico de errores
 - Documentación técnica
 
-## Pasos seguidos
+## Pasos detallados
 1. Acceso al servidor:
 Mediante los datos técnicos que se piden, primeramente vamos a conectarnos a la máquina virtual.
 - Comprobamos que la IP xx.xx.xxx.xxx nos da conectividad y responde.
