@@ -5,7 +5,7 @@
 ## Descripción
 Proyecto de laboratorio personal basado en una prueba técnica de administración de sistemas. El objetivo consistió en desplegar una plataforma de vídeo open source sobre Debian, configurar el entorno de ejecución y aplicar medidas de seguridad y administración propias de un entorno productivo.
 
-## Tecnologías
+## Tecnologías utilizadas
 - Debian Linux
 - Docker
 - Git
