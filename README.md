@@ -190,7 +190,37 @@ Rama master correcta
 <img width="815" height="129" alt="image" src="https://github.com/user-attachments/assets/63657971-2752-45c6-8931-8efed0cbb949" />
 
 Vemos que existe el composer.lock
+
 Solución: sustituimos en el dockerfile el “composer update” por “composer install”. Y una vez realizado el cambio volvemos a ejecutar el comando make up para que despliegue todo y se reproduzca el entorno de nuevo.
+
 Editamos el Dockerfile mediante el editor de texto nano:
 
+<img width="805" height="656" alt="image" src="https://github.com/user-attachments/assets/7555ac82-fd85-484f-94c8-15d0833bc55b" />
+
+Sustitumos composer update por composer install. Guardamos y cerramos.
+
+Lo siguiente es lanzar make up.
+
+<img width="444" height="89" alt="image" src="https://github.com/user-attachments/assets/89ee4e9a-d52b-45ed-aee2-09f42024a4f9" />
+
+Vemos que los contenedores de pumukit están activos correctamente.
+
+Después de lanzar correctamente y que funciona make up, comprobamos los contenedores que se han levantado:
+
+- docker ps
+
+<img width="813" height="80" alt="image" src="https://github.com/user-attachments/assets/47e30dc6-da31-4de8-916a-b95237a8522a" />
+
+Vemos los 4 contenedores levantados todos con su puerto correspondiente, su estado y su ID. Funcionan 3 correctamente.
+Falta solucionar el contenedor de pumukit-proxy.
+
+Vamos a revisar los logs del contenedor ejecutando la orden:
+
+- docker logs pumukit-proxy-1
+
+Comprobamos las redes de docker:
+
+- docker network ls
+
+Revisamos
 ## Qué faltó por completar
