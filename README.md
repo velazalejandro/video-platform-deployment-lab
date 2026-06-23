@@ -78,6 +78,7 @@ La estructura se diseñó para separar:
 - Ficheros de despliegue
 
 5. Instalar Docker
+
 Los elementos importantes que consta el proyecto de Pumukit son los archivos de Dockerfile y Docker Compose, ya que el proyecto está construido con Docker principalmente. La documentación y el repositorio de Pumukit contiene contenedores, así que instalamos Docker Engine y Docker Compose Plugin
 Añadimos la clave oficial de Docker:
 - sudo install -m 0755 -d /etc/apt/keyrings curl -fsSL https://download.docker.com/linux/ubuntu/gpg | \ sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg
