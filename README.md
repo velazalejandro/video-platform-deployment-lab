@@ -67,6 +67,7 @@ Probamos a entrar con el usuario mediante:
 - sudo mkdir -p /opt/pumukit
 - sudo mkdir -p /opt/pumukit/data
 - sudo mkdir -p /opt/pumukit/backups
+
 Se utiliza /opt/pumukit como directorio principal siguiendo la práctica habitual de alojar aplicaciones de terceros bajo /opt.
 La estructura se diseñó para separar:
 - Configuración
