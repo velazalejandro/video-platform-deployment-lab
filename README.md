@@ -98,6 +98,29 @@ Instalamos los paquetes base:
 
 <img width="689" height="314" alt="image" src="https://github.com/user-attachments/assets/b5674745-0892-4f5c-a95d-ac9ed4567148" />
 
+Instalamos Docker:
+
+- sudo apt install docker-ce docker-ce-cli containerd.io docker-compose-plugin
+
+<img width="815" height="433" alt="image" src="https://github.com/user-attachments/assets/1db1e0fa-7b02-4ce9-9d3e-7b081c28df5c" />
+
+Comprobamos que Docker funciona correctamente:
+
+- sudo docker run hello-world
+
+<img width="667" height="453" alt="image" src="https://github.com/user-attachments/assets/2df51cd7-1c34-4f30-ac80-dab46e78b597" />
+
+
+6. Clonación del repositorio de Pumukit
+   
+Repositorio oficial: Pumukit GitHub
+
+- cd /opt sudo git clone https://github.com/pumukit/Pumukit.git
+- cd pumukit
+- ls -la
+
+<img width="808" height="306" alt="image" src="https://github.com/user-attachments/assets/e3858bf9-2052-4ed9-be64-a7c6a638e3d1" />
+
 
 
 ## Qué faltó por completar
