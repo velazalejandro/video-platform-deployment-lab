@@ -317,4 +317,7 @@ Montamos directorios desde la ruta del directorio opt:
 - /opt/pumukit/data/db
 - /opt/pumukit/data/search
 
-## Qué faltó por completar
+## Resumen final + Qué faltó por completar
+
+Se ha conseguido desplegar la infraestructura Docker completa de Pumukit, incluyendo los servicios MongoDB, Redis, PHP y Nginx. Durante el proceso se resolvieron varias incidencias relacionadas con dependencias Composer, construcción de imágenes Docker, comunicación entre contenedores y configuración del servicio proxy. Finalmente la aplicación quedó accesible vía web y alcanzó la fase de ejecución de Symfony. El estado final obtenido fue un error HTTP 400 relacionado con la gestión de sesión de la aplicación, indicando que la infraestructura y la comunicación entre servicios ya estaban operativas. Aunque no dispongo de experiencia previa con Symfony, se realizó un proceso completo de despliegue, análisis y resolución de incidencias siguiendo buenas prácticas de administración de sistemas.
+
