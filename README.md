@@ -47,8 +47,16 @@ Para mantener el sistema bien actualizado y los paquetes, ejecutamos los siguien
 - sudo apt update
 - sudo apt upgrade –y
 
+<img width="643" height="403" alt="image" src="https://github.com/user-attachments/assets/84058798-2535-4372-9a90-26509659bc5f" />
 
 
+3. Configuración de usuario y pruebas:
+Creamos un nuevo usuario mediante buenas prácticas para realizar pruebas mediante la siguiente orden: (para no utilizar siempre el administrador en todo).
+- sudo adduser alejandro
+El nuevo usuario lo añadimos al grupo sudo:
+- sudo usermod -aG sudo alejandro
+Probamos a entrar con el usuario mediante:
+- ssh alejandro@xx.xx.xxx.xxx + la contraseña a introducir
 
 
 
