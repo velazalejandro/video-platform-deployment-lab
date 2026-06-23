@@ -233,8 +233,65 @@ Revisamos
 
 <img width="814" height="328" alt="image" src="https://github.com/user-attachments/assets/3c5f7a7c-eea4-49db-be1d-f6bb376e0129" />
 
+Ejecutamos docker ps y vemos como están los 4 contenedores levantados correctamente. El proxy tiene el puerto 80 y el puerto 443 de https.
+
+<img width="814" height="145" alt="image" src="https://github.com/user-attachments/assets/e3bf81cb-ffae-439c-a3bc-f2978249f919" />
+
+Con lo cual el principal problema era que el contenedor pumukit-proxy-1 estaba reiniciándose continuamente y la web no era accesible.
+
+Los logs mostraban:
+
+- nginx: [emerg] host not found in upstream "php" in /etc/nginx/conf.d/default.conf:30
+
+La línea afectada era:
+
+- fastcgi_pass php:9000;
+
+Durante el despliegue se detectó una incidencia en el servicio reverse proxy (Nginx), que impedía el arranque correcto de la plataforma. Se realizó un proceso de troubleshooting analizando logs de Docker, conectividad entre contenedores y resolución DNS interna. Tras verificar la red Docker y la resolución del servicio PHP mediante herramientas de inspección (docker inspect, getent hosts, docker compose logs), el servicio proxy quedó operativo y fue posible continuar con la validación del entorno.
+Intentamos acceder por vía web con la IP indicada. Nos da un error 502 del Gateway.
+
+<img width="1277" height="155" alt="image" src="https://github.com/user-attachments/assets/09a5294c-4dd4-4804-a1d1-7865df87dd6b" />
 
 
+Falta que php atienda las peticiones correctamente. Seguimos revisando el tema de logs del contenedor de php:
+
+- docker logs pumukit-php-1 –tail 100
+
+<img width="681" height="508" alt="image" src="https://github.com/user-attachments/assets/c444cc8f-797a-41a1-be57-032c47dec225" />
+
+Comprobamos con ss –lntp los puertos de la máquina virtual que están en escucha.
+
+<img width="680" height="139" alt="image" src="https://github.com/user-attachments/assets/df414ec4-e08c-4e89-8e7b-23595a7b1081" />
+
+Hemos encontrado la causa exacta del 502 Bad Gateway:
+
+/usr/local/etc/php-fpm.d/www.conf:listen = 127.0.0.1:9000
+
+<img width="676" height="204" alt="image" src="https://github.com/user-attachments/assets/6d9339fd-b7bc-4728-880a-0b29e95f5709" />
+
+
+PHP-FPM está escuchando únicamente en la interfaz local del contenedor (localhost).
+
+Nginx está en otro contenedor y trata de conectar a php:9000, pero como PHP-FPM sólo escucha en 127.0.0.1, rechaza la conexión.
+
+Comprobamos el contenido del contenedor PHP:
+
+- cat /usr/local/etc/php-fpm.d/www.conf | grep listen
+
+<img width="682" height="61" alt="image" src="https://github.com/user-attachments/assets/a0307565-ddbe-4f53-929b-97536b2171d7" />
+
+<img width="496" height="178" alt="image" src="https://github.com/user-attachments/assets/98d82957-6bb7-41e2-93df-c9c9e3f1483c" />
+
+www.conf contiene listen = 127.0.0.1:9000
+
+docker.conf contiene listen = 9000
+
+Comprobamos qué configuración está usando PHP-FPM:
+
+Nos situamos dentro del contenedor PHP con docker exec -it pumukit-php-1 sh y ejecutamos:
+
+- php-fpm -i | grep listen
+- grep listen /usr/local/etc/php-fpm.d/www.conf
 
 
 
